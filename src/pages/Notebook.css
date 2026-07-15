@@ -1,0 +1,77 @@
+.notebook-page {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  gap: 2rem;
+}
+
+.notebook-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.toggle-sidebar-btn {
+  display: none;
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.notebook-not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+.not-found-content {
+  text-align: center;
+}
+
+.not-found-content h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.back-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: var(--accent-hover);
+}
+
+@media (max-width: 768px) {
+  .notebook-page {
+    gap: 0;
+  }
+
+  .toggle-sidebar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .notebook-main {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,133 @@
+.bookshelf-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  padding-bottom: 4rem;
+}
+
+.bookshelf-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.bookshelf-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+}
+
+.bookshelf-hero h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--accent-color), var(--text-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bookshelf-hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.notebooks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.create-notebook-card {
+  aspect-ratio: 1 / 1.4;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  gap: 1rem;
+}
+
+.create-notebook-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.create-notebook-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+}
+
+.create-notebook-card p {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-secondary);
+}
+
+.empty-state p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state-hint {
+  font-size: 1rem;
+  color: var(--text-tertiary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .notebooks-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .bookshelf-hero h2 {
+    font-size: 2rem;
+  }
+
+  .bookshelf-container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .notebooks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bookshelf-hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .bookshelf-hero p {
+    font-size: 1rem;
+  }
+}
